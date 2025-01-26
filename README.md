@@ -65,8 +65,8 @@ Para o treinamento, foi definido que será utilizado 80% do dado, da amostra 0 a
 
 $$
 MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-$$
 (A)
+$$
 
 A parte profunda será predita no traço inteiro com o teste, que também contém algumas métricas de avaliação.
 Uma maneira de obter uma estimativa do desempenho de generalização de um modelo é observar as curvas de aprendizado: são gráficos do desempenho do modelo no conjunto de treinamento e no conjunto de validação em função do tamanho do conjunto de treinamento (ou da iteração de treinamento) [5].
