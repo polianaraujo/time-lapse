@@ -64,7 +64,7 @@ O treinamento da rede é feito a partir de uma função que tem como entrada os 
 Para o treinamento, foi definido que será utilizado 80% do dado, da amostra 0 até 800 (considerada parte rasa do dado), e os outros 20% para validação. A função de perda foi a do erro quadrático médio, na equação A a seguir.
 
 $$
-MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \tag{(A)}
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \tag{A}
 $$
 
 
