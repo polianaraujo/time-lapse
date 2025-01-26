@@ -62,9 +62,10 @@ Neste caso, os dados de entrada são os dados monitor, que são as medições ob
 
 O treinamento da rede é feito a partir de uma função que tem como entrada os traços, o tamanho de batch size e número de épocas escolhidas. A manipulação dos dados é feita a cada traço baseline e monitor, que são primeiramente normalizados com método Standard (padronização), transformando os valores de forma que tenham média zero e desvio padrão igual a um. Com a normalização é armazenada a escala dos dados baseline que vai ser útil para o teste, e após isso, é feito o janelamento de ambos. Para o presente trabalho, foi utilizado um tamanho de janela igual a 20, pois este valor é maior do que o período da wavelet que modela a fonte sísmica. Isso garante que as características principais da fonte sísmica sejam representadas dentro de cada janela, permitindo com que o modelo possa aprender melhor as relações temporais dos dados sísmicos.
 Para o treinamento, foi definido que será utilizado 80% do dado, da amostra 0 até 800 (considerada parte rasa do dado), e os outros 20% para validação. A função de perda foi a do erro quadrático médio, na equação A a seguir.
-|$$
-MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-$$|(A)|
+
+$$
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \tag{(A)}
+$$
 
 
 A parte profunda será predita no traço inteiro com o teste, que também contém algumas métricas de avaliação.
