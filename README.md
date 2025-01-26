@@ -53,8 +53,7 @@ Uma Rede Neural Recorrente (RNN) é um tipo de rede neural artificial que utiliz
 
 Para treinar uma RNN, o truque é desenrolá-la no tempo e, em seguida, usar a retropropagação regular, presente na figura 1. Essa estratégia é chamada de retropropagação no tempo (BPTT - Backpropagation Through Time) [5].
 
-
-
+![f1](https://github.com/polianaraujo/time-lapse/blob/main/images/f1.jpg)
 
 Figura 1 - Backpropagation ao longo do tempo.
 
@@ -102,28 +101,11 @@ O treinamento com três traços teve como entrada os três traços centrais [199
 
 Figuras 3 - (a) Região do reservatório e (b) Traço 199 inteiro.
 
-
-
-
-Inteiro
-Chegada
-Profundo
-Reservatório
-Baseline
-0,43
-0,0
-9,27
-9,74
-Monitor
-13,64
-13,65
-9,21
-8,61
-Inferido
-0,34
-0,31
-3,07
-2,6
+|          | Inteiro | Chegada | Profundo | Reservatório |
+|----------|---------|---------|----------|--------------|
+| Baseline |   0,43  |  0,0    |   9,27   |     9,74     |
+| Monitor  |  13,64  |  13,65  |   9,21   |     8,61     |
+| Inferido |   0,34  |   0,31  |   3,07   |     2,6      |
 
 
 Tabela 1 - Diferenças entre as diferentes regiões dos traços 199 em relação ao monitor perfeito.
@@ -134,27 +116,11 @@ Tabela 1 - Diferenças entre as diferentes regiões dos traços 199 em relação
 Figuras 4 - (a) Região do reservatório e (b) Traço 200 inteiro.
 
 
-
-
-Inteiro
-Chegada
-Profundo
-Reservatório
-Baseline
-0,44
-0,0
-9,44
-9,88
-Monitor
-14,02
-14,03
-9,27
-8,66
-Inferido
-0,34
-0,31
-3,01
-2,55
+|          | Inteiro | Chegada | Profundo | Reservatório |
+|----------|---------|---------|----------|--------------|
+| Baseline |   0,44  |  0,0    |   9,44   |     9,88     |
+| Monitor  |  14,02  |  14,03  |   9,27   |     8,66     |
+| Inferido |   0,34  |   0,31  |   3,01   |     2,55     |
 
 
 Tabela 2 - Diferenças entre as diferentes regiões dos traços 200 em relação ao monitor perfeito.
@@ -163,27 +129,11 @@ Tabela 2 - Diferenças entre as diferentes regiões dos traços 200 em relação
 
 Figuras 5 - (a) Região do reservatório e (b) Traço 201 inteiro.
 
-
-
-Inteiro
-Chegada
-Profundo
-Reservatório
-Baseline
-0,44
-0,0
-9,61
-10,03
-Monitor
-14,41
-14,42
-9,33
-8,74
-Inferido
-0,64
-0,63
-2,95
-2,5
+|          | Inteiro | Chegada | Profundo | Reservatório |
+|----------|---------|---------|----------|--------------|
+| Baseline |   0,44  |  0,0    |   9,61   |     10,03    |
+| Monitor  |  14,41  |  14,42  |   9,33   |     8,74     |
+| Inferido |   0,64  |   0,63  |   2,95   |     2,5      |
 
 
 Tabela 3 - Diferenças entre as diferentes regiões dos traços 201 em relação ao monitor perfeito.
@@ -199,27 +149,11 @@ Já o treinamento com cinco traços teve como entrada os três traços centrais 
 
 Figuras 7 - (a) Região do reservatório e (b) Traço 198 inteiro.
 
-
-
-Inteiro
-Chegada
-Profundo
-Reservatório
-Baseline
-0,42
-0,0
-9,1
-9,61
-Monitor
-13,26
-13,26
-9,15
-8,57
-Inferido
-0,71
-0,7
-2,79
-2,19
+|          | Inteiro | Chegada | Profundo | Reservatório |
+|----------|---------|---------|----------|--------------|
+| Baseline |   0,42  |   0,0   |   9,1    |     9,61     |
+| Monitor  |  13,26  |  13,26  |   9,15   |     8,57     |
+| Inferido |   0,71  |   0,7   |   2,79   |     2,19     |
 
 
 Tabela 4 - Diferenças entre as diferentes regiões dos traços 198 em relação ao monitor perfeito.
@@ -228,63 +162,25 @@ Tabela 4 - Diferenças entre as diferentes regiões dos traços 198 em relação
 
 Figuras 8 - (a) Região do reservatório e (b) Traço 200 inteiro.
 
-
-
-
-Inteiro
-Chegada
-Profundo
-Reservatório
-Baseline
-0,44
-0,0
-9,44
-9,88
-Monitor
-14,02
-14,03
-9,27
-8,66
-Inferido
-0,46
-0,44
-2,72
-2,12
-
+|          | Inteiro | Chegada | Profundo | Reservatório |
+|----------|---------|---------|----------|--------------|
+| Baseline |   0,44  |   0,0   |   9,44   |     9,88     |
+| Monitor  |  14,02  |  14,03  |   9,27   |     8,66     |
+| Inferido |   0,46  |   0,44  |   2,72   |     2,12     |
 
 Tabela 5 - Diferenças entre as diferentes regiões dos traços 200 em relação ao monitor perfeito.
 
 
 Figuras 9 - (a) Região do reservatório e (b) Traço 202 inteiro.
 
-
-
-
-
-Inteiro
-Chegada
-Profundo
-Reservatório
-Baseline
-0,45
-0,0
-9,77
-10,19
-Monitor
-14,8
-14,81
-9,39
-8,83
-Inferido
-1,06
-1,05
-2,64
-2,05
+|          | Inteiro | Chegada | Profundo | Reservatório |
+|----------|---------|---------|----------|--------------|
+| Baseline |   0,45  |   0,0   |   9,77   |     10,19    |
+| Monitor  |  14,8   |  14,81  |   9,39   |     8,83     |
+| Inferido |   1,06  |   1,05  |   2,64   |     2,05     |
 
 
 Tabela 6 - Diferenças entre as diferentes regiões dos traços 202 em relação ao monitor perfeito.
-
-
 
 A curva de treinamento dos três traços com o batch size igual a 2000 na Figura 10 indica que tanto a perda de treinamento quanto a perda de validação estão diminuindo e permanecem próximas uma da outra ao longo das épocas, o modelo está aprendendo corretamente e não está sobreajustando. Na última época, o comportamento das curvas indicam que poucas épocas à frente o modelo ainda iria aprender mais.
 
