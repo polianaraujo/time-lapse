@@ -66,7 +66,7 @@ Para o treinamento, foi definido que será utilizado 80% do dado, da amostra 0 a
 (A)
 
 $$
-MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+MSE = \frac{1}{N} \sum_{i=0}^{n} (\theta(m_i) - b_i)^2
 $$
 
 
@@ -78,9 +78,11 @@ A métrica RMS (do inglês Root Mean Square) é uma medida estatística comum us
 
 O NRMS, por sua vez, é uma forma normalizada do RMS que possibilita comparar a diferença relativa entre dois conjuntos de dados. A normalização é realizada ao dividir o RMS da diferença entre os dois conjuntos de dados pelo RMS da soma desses conjuntos e multiplicar o resultado por 200, o que converte o valor para uma porcentagem variando de zero a 200. O cálculo é feito a partir da equação B.
 
-NRMS=200*RMS(B-M)RMS(B)+RMS(M)
 (B)
 
+$$
+NRMS = \frac{200RMS(B-M)}{RMS(B)+RMS(M)}
+$$
 
 Foi utilizada uma célula GRU (Gated Recurrent Unit) para prever o comportamento dos dados baseline a partir dos dados monitor. Para isso, os dados monitor serão usados como entrada, enquanto os dados baseline serão usados como saída. Ela foi proposta por Cho et al. [2014] para permitir que cada unidade recorrente capture de forma adaptativa dependências em diferentes escalas de tempo, possuindo unidades de porta que modulam o fluxo de informação dentro da unidade, porém, sem ter células de memória separadas [3].
 A GRU utiliza dois portões, um para realizar a atualização e outro para a redefinição da informação, como demonstrado na figura 2 [4]. Resumidamente ela é composta por quatro etapas, dentre elas a (i) atualização do portão permitindo definir quanto das informações anteriores precisa ser passada para a próxima etapa, (ii) redefinição do portão definindo quanto das informações anteriores serão esquecidas pela rede, (iii) conteúdo atual da memória, que define qual o conteúdo da memória nesse instante, quando utilizará a saída da redefinição para guardar informações relevantes do passado e a (iv) saída da unidade oculta, etapa que tem a memória final, definindo o valor que saíra como resultado sobre etapas anteriores [4].
