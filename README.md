@@ -53,7 +53,7 @@ Uma Rede Neural Recorrente (RNN) é um tipo de rede neural artificial que utiliz
 
 Para treinar uma RNN, o truque é desenrolá-la no tempo e, em seguida, usar a retropropagação regular, presente na figura 1. Essa estratégia é chamada de retropropagação no tempo (BPTT - Backpropagation Through Time) [5].
 
-![f1](https://github.com/polianaraujo/time-lapse/blob/main/images/f1.jpg)
+![f1](https://github.com/polianaraujo/time-lapse/blob/main/images/f1.png)
 
 Figura 1 - Backpropagation ao longo do tempo.
 
