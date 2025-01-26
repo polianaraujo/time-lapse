@@ -86,9 +86,12 @@ $$
 Foi utilizada uma célula GRU (Gated Recurrent Unit) para prever o comportamento dos dados baseline a partir dos dados monitor. Para isso, os dados monitor serão usados como entrada, enquanto os dados baseline serão usados como saída. Ela foi proposta por Cho et al. [2014] para permitir que cada unidade recorrente capture de forma adaptativa dependências em diferentes escalas de tempo, possuindo unidades de porta que modulam o fluxo de informação dentro da unidade, porém, sem ter células de memória separadas [3].
 A GRU utiliza dois portões, um para realizar a atualização e outro para a redefinição da informação, como demonstrado na figura 2 [4]. Resumidamente ela é composta por quatro etapas, dentre elas a (i) atualização do portão permitindo definir quanto das informações anteriores precisa ser passada para a próxima etapa, (ii) redefinição do portão definindo quanto das informações anteriores serão esquecidas pela rede, (iii) conteúdo atual da memória, que define qual o conteúdo da memória nesse instante, quando utilizará a saída da redefinição para guardar informações relevantes do passado e a (iv) saída da unidade oculta, etapa que tem a memória final, definindo o valor que saíra como resultado sobre etapas anteriores [4].
 
+![f2](https://github.com/polianaraujo/time-lapse/blob/main/images/f2.png)
+
 Figura 2 - Uma unidade da RNN-GRU [Geron 2019]
 
 Embora as células LSTM e GRU possam lidar com sequências muito mais longas do que as RNNs simples, elas ainda têm uma memória de curto prazo relativamente limitada e têm dificuldade em aprender padrões de longo prazo em sequências de 100 ou mais etapas de tempo, como amostras de áudio, séries temporais longas ou frases longas [5].
+
 
 ## Resultados e Discussão
 
@@ -96,8 +99,7 @@ Os testes foram realizados para (i) três traços (do traço 199 ao 201) e para 
 
 O treinamento com três traços teve como entrada os três traços centrais [199, 200, 201] dos dados monitor, e um dos diferentes valores para o parâmetro batch size, o que resultou em uma menor diferença (ou seja, melhor resultado) dos traços inferidos em relação ao monitor perfeito foi o igual a 700, após o teste da rede foram montados gráficos do traço 199 nas Figuras 3a e 3b, do gráfico 200 nas Figuras 4a e 4b e do gráfico 201 nas Figuras 5a e 5b com o intuito de analisar as diferenças entre os traços monitor, baseline e inferido em relação ao monitor perfeito.
 
-
-
+![f3](https://github.com/polianaraujo/time-lapse/blob/main/images/f3.png)
 
 Figuras 3 - (a) Região do reservatório e (b) Traço 199 inteiro.
 
@@ -110,8 +112,7 @@ Figuras 3 - (a) Região do reservatório e (b) Traço 199 inteiro.
 
 Tabela 1 - Diferenças entre as diferentes regiões dos traços 199 em relação ao monitor perfeito.
 
-
-
+![f4](https://github.com/polianaraujo/time-lapse/blob/main/images/f4.png)
 
 Figuras 4 - (a) Região do reservatório e (b) Traço 200 inteiro.
 
@@ -125,7 +126,7 @@ Figuras 4 - (a) Região do reservatório e (b) Traço 200 inteiro.
 
 Tabela 2 - Diferenças entre as diferentes regiões dos traços 200 em relação ao monitor perfeito.
 
-
+![f5](https://github.com/polianaraujo/time-lapse/blob/main/images/f5.png)
 
 Figuras 5 - (a) Região do reservatório e (b) Traço 201 inteiro.
 
@@ -140,12 +141,14 @@ Tabela 3 - Diferenças entre as diferentes regiões dos traços 201 em relação
 
 A curva de treinamento dos três traços com o batch size igual a 700 na Figura 6 indica que tanto a perda de treinamento quanto a perda de validação estão diminuindo e permanecem próximas uma da outra ao longo das épocas, o modelo está aprendendo corretamente e não está sobreajustando.
 
+![f6](https://github.com/polianaraujo/time-lapse/blob/main/images/f6.png)
 
 Figura 6 - Curva de treinamento dos traços 199, 200 e 201.
 
 
 Já o treinamento com cinco traços teve como entrada os três traços centrais [198, 199, 200, 201, 202] dos dados monitor, e valor igual a 700 para o parâmetro batch size, que resultou em uma menor diferença (portanto, melhor resultado) dos traços inferidos em relação ao monitor perfeito. Após o teste da rede, foram montados gráficos de todos os cinco traços, mas a fim de comparação serão mostrados apenas o traço 198 nas Figuras 7a e 7b, o traço central 200 nas Figuras 8a e 8b e o traço 201 nas Figuras 9a e 9b com o intuito de analisar as diferenças entre os traços monitor, baseline e inferido em relação ao monitor perfeito.
 
+![f7](https://github.com/polianaraujo/time-lapse/blob/main/images/f7.png)
 
 Figuras 7 - (a) Região do reservatório e (b) Traço 198 inteiro.
 
@@ -158,7 +161,7 @@ Figuras 7 - (a) Região do reservatório e (b) Traço 198 inteiro.
 
 Tabela 4 - Diferenças entre as diferentes regiões dos traços 198 em relação ao monitor perfeito.
 
-
+![f8](https://github.com/polianaraujo/time-lapse/blob/main/images/f8.png)
 
 Figuras 8 - (a) Região do reservatório e (b) Traço 200 inteiro.
 
@@ -170,6 +173,7 @@ Figuras 8 - (a) Região do reservatório e (b) Traço 200 inteiro.
 
 Tabela 5 - Diferenças entre as diferentes regiões dos traços 200 em relação ao monitor perfeito.
 
+![f9](https://github.com/polianaraujo/time-lapse/blob/main/images/f9.png)
 
 Figuras 9 - (a) Região do reservatório e (b) Traço 202 inteiro.
 
@@ -184,10 +188,9 @@ Tabela 6 - Diferenças entre as diferentes regiões dos traços 202 em relação
 
 A curva de treinamento dos três traços com o batch size igual a 2000 na Figura 10 indica que tanto a perda de treinamento quanto a perda de validação estão diminuindo e permanecem próximas uma da outra ao longo das épocas, o modelo está aprendendo corretamente e não está sobreajustando. Na última época, o comportamento das curvas indicam que poucas épocas à frente o modelo ainda iria aprender mais.
 
+![f10](https://github.com/polianaraujo/time-lapse/blob/main/images/f10.png)
 
 Figura 10 - Curva de treinamento dos traços 198, 199, 200, 201 e 202.
-
-
 
 
 ## Conclusões
@@ -199,7 +202,6 @@ A curva de aprendizagem para o treino dos traços 199, 200 e 201 - na Figura 6 -
 Comparando o treino de três com o de cinco traços, a diferença encontrada entre os testes é que, ao aumentar a quantidade de traços no treinamento - e dessa forma, aumentando a quantidade de dados de entrada - a inferência dos traços “dos extremos” acabam resultando em erros maiores. No caso do treino com cinco traços, a inferência do 198 e 202 teve um erro um pouco maior. No geral, os resultados foram bons, mas como Geron diz em seu livro, uma possível maneira de resolver a dificuldade em aprender padrões de longo prazo em sequências de 100 ou mais etapas de tempo, é encurtar as sequências de entrada, por exemplo, usando camadas convolucionais 1D.
 
 Agradecimento pela colaboração dos professores Dr. Gilberto Corso, Dr. Tiago Barros e Ramon Araújo, e em especial ao CNPq pelo apoio financeiro através do financiamento da bolsa de iniciação científica.
-	
 
 
 ## Referências
