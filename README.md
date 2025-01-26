@@ -91,9 +91,7 @@ Figura 2 - Uma unidade da RNN-GRU [Geron 2019]
 
 Embora as células LSTM e GRU possam lidar com sequências muito mais longas do que as RNNs simples, elas ainda têm uma memória de curto prazo relativamente limitada e têm dificuldade em aprender padrões de longo prazo em sequências de 100 ou mais etapas de tempo, como amostras de áudio, séries temporais longas ou frases longas [5].
 
-Resultados e Discussão
-1/20000
-Apresentação dos dados coletados e confronto dos resultados com a literatura consultada.
+## Resultados e Discussão
 
 Os testes foram realizados para (i) três traços (do traço 199 ao 201) e para (ii) cinco traços (do traço 198 ao 202), ambos com 300 épocas, e diferentes tamanhos de batch size.
 
