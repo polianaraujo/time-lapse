@@ -1,6 +1,6 @@
 # Aplicação de Redes Neurais Recorrentes para Correspondência de Dados de Sísmica Time-Lapse
 
-[Apresentação]()
+[Apresentação](https://github.com/polianaraujo/time-lapse/blob/main/Apresentacao.pdf)
 
 ## Resumo
 
